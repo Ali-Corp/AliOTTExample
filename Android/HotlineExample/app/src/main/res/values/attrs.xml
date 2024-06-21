@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RipplePulseLayout">
+        <attr name="pulse_count" format="integer"/>
+        <attr name="pulse_duration" format="integer"/>
+        <attr name="pulse_color" format="color"/>
+        <attr name="pulse_repeat" format="integer"/>
+        <attr name="pulse_maxScale" format="float"/>
+        <attr name="pulse_startFromScratch" format="boolean"/>
+        <attr name="pulse_interpolator" format="enum">
+            <enum name="Linear" value="0"/>
+            <enum name="Accelerate" value="1"/>
+            <enum name="Decelerate" value="2"/>
+            <enum name="AccelerateDecelerate" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>
