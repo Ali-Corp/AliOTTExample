@@ -21,12 +21,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
 
         maven {
-            url ''
-            name 'AliOTT'
-            credentials {
-                username ""
-                password ""
-            }
+            url 'https://maven.pkg.github.com/Ali-Corp/AliOTT'
         }
     }
 }
