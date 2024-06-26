@@ -13,15 +13,15 @@ import SwiftyJSON
 struct HotlineCallExampleApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @UIApplicationDelegateAdaptor var delegate: AppDelegate
-    
+
     @State private var call: ALIOTTCall? = nil
-    
+
     var body: some Scene {
         WindowGroup {
             ZStack {
                 ContentView()
                     .onAppear {
-                        delegate.onRequestShowCallView = { call in
+                        delegate.onRequestShowCall = { call in
                             self.call = call
                         }
                     }

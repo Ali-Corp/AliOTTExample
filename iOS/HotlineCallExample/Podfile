@@ -7,7 +7,7 @@ platform :ios, '14.0'
 use_frameworks!
 
 target 'HotlineCallExample' do
-  pod 'ALIOTT/Hotline', '~> 1.0.3'
+  pod 'ALIOTT/Hotline', '~> 1.0.4'
   pod 'Starscream', '~> 3.1'
 
   post_install do |installer|
