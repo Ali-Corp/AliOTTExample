@@ -6,8 +6,8 @@ source 'https://github.com/Ali-Corp/PodSpecs.git'
 platform :ios, '14.0'
 use_frameworks!
 
-target 'HotlineCallExample' do
-  pod 'ALIOTT/Hotline', '~> 1.0.4'
+target 'ALIOTTExample' do
+  pod 'ALIOTT', '~> 1.0.10'
   pod 'Starscream', '~> 3.1'
 
   post_install do |installer|

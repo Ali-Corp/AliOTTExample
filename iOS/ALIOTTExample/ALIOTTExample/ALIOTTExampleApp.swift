@@ -1,16 +1,16 @@
 //
-//  HotlineCallExampleApp.swift
-//  HotlineCallExample
+//  ALIOTTExampleApp.swift
+//  ALIOTTExample
 //
 //  Created by Vu Ho on 11/6/24.
 //
 
 import SwiftUI
-import ALIOTTHotline
+import ALIOTT
 import SwiftyJSON
 
 @main
-struct HotlineCallExampleApp: App {
+struct ALIOTTExampleApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @UIApplicationDelegateAdaptor var delegate: AppDelegate
 
@@ -27,9 +27,10 @@ struct HotlineCallExampleApp: App {
                     }
                 if let call = call {
                     NavigationView {
-                        CallView(call: call) {
+                        CallSwiftUIView(call: call) {
                             self.call = nil
                         }
+                        .navigationBarHidden(true)
                     }
                 }
             }
