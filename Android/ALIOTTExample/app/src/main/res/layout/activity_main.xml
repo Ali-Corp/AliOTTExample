@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            app:menu="@menu/menu_main"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/callerIdLabel"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="CallerID"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/calleeId"
+            />
+        <EditText
+            android:id="@+id/callerId"
+            android:hint="Caller ID"
+            android:text="0334334455"
+            android:editable="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/callerIdLabel"
+            />
+
+
+        <TextView
+            android:id="@+id/calleeIdLabel"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/callerId"
+            android:text="CalleeID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/calleeId"
+            android:hint="Callee ID"
+            android:text="0334334450"
+            app:layout_constraintTop_toBottomOf="@+id/calleeIdLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_marginTop="22dp"
+            app:layout_constraintTop_toBottomOf="@id/calleeId"
+            android:text="Call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnHotlineCall"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btnCall"
+            android:text="Hotline Call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/fab_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@android:drawable/ic_menu_call" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

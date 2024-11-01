@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/xanhsm_ott_screen_bg_bk"
+    android:fitsSystemWindows="false"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="60dp">
+
+    <TextView
+        android:id="@+id/tvFreeCall"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_free_call"
+        android:textColor="@color/ott_call_label_color"
+        android:textFontWeight="900"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/rpAvatar"
+        android:layout_below="@+id/tvFreeCall"
+        android:orientation="vertical"
+        android:layout_above="@+id/groupActionAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        app:pulse_count="4"
+        app:pulse_duration="2000"
+        app:pulse_repeat="0"
+        app:pulse_color="#2196F3"
+        app:pulse_startFromScratch="true"
+        app:pulse_interpolator="Linear"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvFreeCall"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/ott_call_text_description_color"
+            android:text="@string/ott_lib_ringing_status"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <vn.ali.ott.widget.CircleImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/avatar"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textFontWeight="800"
+                android:textColor="@color/ott_call_label_color"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/groupActionAudio"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/groupActionCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:id="@+id/llSpeaker"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btSpeaker"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/bg_speaker_off"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackgroundBorderless" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ott_lib_speaker"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/ott_call_text_description_color"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMic"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/btMic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/bg_mic"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackgroundBorderless" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ott_lib_mic"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/ott_call_text_description_color"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDeeplinkMsg"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btDeeplinkMsg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_message_deeplink"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackgroundBorderless" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ott_lib_message"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/ott_call_text_description_color"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/groupActionCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="100dp"
+        android:animateLayoutChanges="true"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/llEndCall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/btEndCall"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/ott_lib_end_call"
+                android:src="@drawable/bg_end_call"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAccept"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btAccept"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/bg_answer_call"
+                android:background="?selectableItemBackgroundBorderless" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
