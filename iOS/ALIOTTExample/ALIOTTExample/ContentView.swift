@@ -65,7 +65,11 @@ struct ContentView: View {
                                         calleeAvatar: "https://cdn-icons-png.flaticon.com/256/147/147144.png",
                                         calleeName: "Nguyễn Thị Nữ",
                                         type: 1,
-                                        metadata: [:]))
+                                        metadata: [
+                                            "check_sum": "5270369466588474968f1730711963000"
+//                                            "check_sum": "5270369466588474968f17307119"
+                                        ]
+                                ))
                             }
                         }
                     }

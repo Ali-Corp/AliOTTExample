@@ -32,3 +32,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "ALIOTTSample"
 include ':app'
+
+//include 'core'
+//include 'aliott'
+//
+//project(':core').projectDir = new File('../../core')
+//project(':aliott').projectDir = new File('../../aliott')

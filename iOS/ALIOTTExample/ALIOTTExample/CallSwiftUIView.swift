@@ -11,11 +11,10 @@ import ALIOTT
 
 struct CallSwiftUIViewRepresentable: UIViewRepresentable {
     let call: ALIOTTCall
-    let onDismiss: () -> Void
 
     func makeUIView(context: Context) -> ALIOTTCallView {
             // Instantiate and configure your CallView
-        let callView = ALIOTTCallView(call: call, onDismiss: onDismiss)
+        let callView = ALIOTTCallView(call: call)
             // Additional setup if needed
         return callView
     }
@@ -30,15 +29,12 @@ struct CallSwiftUIView: View {
     @Environment(\.presentationMode) private var presentationMode
     @State private var call: ALIOTTCall
 
-    private var onDismiss: () -> Void
-
-    init(call: ALIOTTCall, onDismiss: @escaping () -> Void) {
+    init(call: ALIOTTCall) {
         _call = .init(initialValue: call)
-        self.onDismiss = onDismiss
     }
 
     var body: some View {
-        CallSwiftUIViewRepresentable(call: call, onDismiss: onDismiss)
+        CallSwiftUIViewRepresentable(call: call)
             .id(call.uuid.uuidString)
             .ignoresSafeArea()
     }
@@ -63,8 +59,6 @@ struct CallSwiftUIView_Previews: PreviewProvider {
                              hotline: false,
                              state: .pending,
                              connectedState: .complete,
-                             connectedTime: Date())) {
-
-        }
+                             connectedTime: Date()))
     }
 }

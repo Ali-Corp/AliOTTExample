@@ -23,10 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public var calleeId: String = ""
 
     var onRequestShowCall: ((_ call: ALIOTTCall) -> Void)? = nil
+    var onRequestHideCall: ((_ reason: ALIOTTEndCallReason) -> Void)? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppDelegate.shared = self
+
+        let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? ""
         let callKitConfig = CallKitConfig(
+            appName: appName,
             iconTemplateImageData: UIImage(named: "AppIcon")?.pngData(),
             ringtoneSound: "custom_sound.mp3")
 
@@ -67,7 +71,10 @@ extension AppDelegate: PKPushRegistryDelegate {
     }
 
     func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType) {
-        ALIOTT.shared().pushRegistry(registry, didReceiveIncomingPushWith: payload, for: type)
+        ALIOTT.shared().pushRegistry(registry, didReceiveIncomingPushWith: payload, for: type, metadata: [
+//                                                        "check_sum": "5270369466588474968f17307119"
+            "check_sum": "5270369466588474968f1730711963000"
+        ])
     }
 
     func pushRegistry(_ registry: PKPushRegistry, didInvalidatePushTokenFor type: PKPushType) {
@@ -76,6 +83,12 @@ extension AppDelegate: PKPushRegistryDelegate {
 }
 
 extension AppDelegate: ALIOTTDelegate {
+    func aliottOnRequestHideCall(call: ALIOTTCall?, reason: ALIOTTEndCallReason) {
+        onRequestHideCall?(reason)
+
+        debugPrint("aliottOnRequestHideCall", reason)
+    }
+    
     func aliottOnRequestCustomMetadataForCall(call: ALIOTTCall) -> [String : Any] {
         return [
             "message_deeplink": "app-settings:root=General&path=ACCESSIBILITY"

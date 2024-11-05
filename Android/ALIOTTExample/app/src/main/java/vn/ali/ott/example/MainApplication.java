@@ -17,6 +17,7 @@ import java.util.concurrent.CompletableFuture;
 import vn.ali.ott.ALIOTT;
 import vn.ali.ott.ALIOTTDelegate;
 import vn.ali.ott.core.object.ALIOTTCallConfig;
+import vn.ali.ott.core.object.ALIOTTEndCallReason;
 import vn.ali.ott.core.object.ALIOTTEnv;
 import vn.ali.ott.core.object.ALIOTTServerConfig;
 import vn.ali.ott.core.object.ALIOTTUser;
@@ -113,8 +114,7 @@ public class MainApplication extends Application implements DefaultLifecycleObse
             @Override
             public void aliottOnNotifyOutgoingCall(@NonNull String calleeId, @NonNull String alert) {
                 //Gọi api push notify to callee (Must be implemented)
-                CompletableFuture<String> subscriber = new RemoteApi().sendPushNotifyToCallee(alert, calleeId);
-                subscriber.thenAccept(result -> {});
+                new RemoteApi().sendPushNotifyToCallee(alert, calleeId, s -> null);
             }
 
             @Override
@@ -125,6 +125,12 @@ public class MainApplication extends Application implements DefaultLifecycleObse
             @Override
             public void aliottOnRequestShowCall(@NonNull ALIOTTCall call) {
 
+            }
+
+            @Override
+            public void aliottOnRequestHideCall(@NonNull ALIOTTCall call, ALIOTTEndCallReason reason) {
+                // Implement UI when call end
+                Log.d("OTT", "aliottOnRequestHideCall: " + reason);
             }
 
             @Override

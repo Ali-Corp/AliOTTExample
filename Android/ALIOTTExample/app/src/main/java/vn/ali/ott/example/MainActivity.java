@@ -18,6 +18,7 @@ import java.util.concurrent.CompletableFuture;
 import vn.ali.ott.core.object.ALIOTTCallConfig;
 import vn.ali.ott.core.object.ALIOTTCallData;
 import vn.ali.ott.core.object.ALIOTTHotlineConfig;
+import vn.ali.ott.example.app.Constants;
 import vn.ali.ott.example.data.local.shared.AppPreferences;
 import vn.ali.ott.example.data.remote.RemoteApi;
 import vn.ali.ott.example.databinding.ActivityMainBinding;
@@ -57,14 +58,23 @@ public class MainActivity extends AppCompatActivity  {
         String clientId = binding.callerId.getText().toString();
         AppPreferences.get().saveClientId(clientId);
 
-        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(token -> {
-            Log.d("MainActivity", "FCM Token: " + token);
-            AppPreferences.get().saveFcmToken(token);
-            new RemoteApi()
-                    .sendFcmToken(clientId, fcmToken).thenAccept(result -> {
-                        Log.d("MainActivity", "Result: " + result);
-                        Toast.makeText(this, "Result: " + result, Toast.LENGTH_SHORT).show();
-                    });
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if(task.isSuccessful()) {
+                String token = task.getResult();
+                Log.d("MainActivity", "FCM Token: " + token);
+                AppPreferences.get().saveFcmToken(token);
+                new RemoteApi()
+                        .sendFcmToken(clientId, fcmToken, s -> {
+                            runOnUiThread(() -> {
+                                Log.d("MainActivity", "Result: " + s);
+                                Toast.makeText(this, "Result: " + s, Toast.LENGTH_SHORT).show();
+                            });
+
+                            return null;
+                        });
+            }else{
+                Toast.makeText(this, "Result: FCM Fail", Toast.LENGTH_SHORT).show();
+            }
         });
 
 
@@ -133,7 +143,9 @@ public class MainActivity extends AppCompatActivity  {
 
         String displayName = calleeName; // Tên thể hiện on UI của cuộc gọi
 
-        HashMap<String, String> metadata = new HashMap<>(); // Metadata của cuộc gọi
+        HashMap<String, String> metadata = new HashMap(){{
+            put("check_sum", "5270369466588474968f1730711963000");
+        }}; // Metadata của cuộc gọi
 
 
         ALIOTTCallData callData = new ALIOTTCallData(

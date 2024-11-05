@@ -12,6 +12,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.concurrent.CompletableFuture;
 
+import vn.ali.ott.core.utils.Function;
 import vn.ali.ott.example.MainActivity;
 import vn.ali.ott.example.MainApplication;
 import vn.ali.ott.example.data.local.shared.AppPreferences;
@@ -42,19 +43,26 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void saveConfig(String clientId) {
-        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(token -> {
-            AppPreferences.get().saveFcmToken(token);
-        }).addOnCompleteListener(task -> {
-            String fcmToken = AppPreferences.get().getCachedFcmToken();
-            AppPreferences.get().saveClientId(clientId);
-            Log.d("MainActivity", "FCM Token: " + fcmToken);
-            CompletableFuture<String> subscriber = new RemoteApi()
-                    .sendFcmToken(clientId, fcmToken);
-            subscriber.thenAccept(result -> {
-                Log.d("MainActivity", "Result: " + result);
-                Toast.makeText(this, "Result: " + result, Toast.LENGTH_SHORT).show();
-            });
-            resetApp();
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if(task.isSuccessful()) {
+                AppPreferences.get().saveFcmToken(task.getResult());
+                String fcmToken = AppPreferences.get().getCachedFcmToken();
+                AppPreferences.get().saveClientId(clientId);
+                Log.d("MainActivity", "FCM Token: " + fcmToken);
+                new RemoteApi()
+                        .sendFcmToken(clientId, fcmToken, s -> {
+                            runOnUiThread(() -> {
+                                Log.d("MainActivity", "Result: " + s);
+                                Toast.makeText(this, "Result: " + s, Toast.LENGTH_SHORT).show();
+                            });
+
+                            return null;
+                        });
+
+                resetApp();
+            }else{
+                Toast.makeText(this, "Result: FCM loi", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

@@ -9,6 +9,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
@@ -21,11 +22,15 @@ import androidx.work.WorkerParameters;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import vn.ali.ott.ALIOTT;
 import vn.ali.ott.core.object.ALIOTTUser;
 import vn.ali.ott.example.MainActivity;
 import vn.ali.ott.example.MainApplication;
 import vn.ali.ott.example.R;
+import vn.ali.ott.example.app.Constants;
 import vn.ali.ott.example.data.local.shared.AppPreferences;
 import vn.ali.ott.example.data.remote.RemoteApi;
 
@@ -39,6 +44,8 @@ public class FirebaseMessingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
+//        Toast.makeText(getApplicationContext(), "Message received", Toast.LENGTH_LONG).show();
+//        Log.d(TAG, "Message Notification Body: ${it.body}");
         if (!remoteMessage.getData().isEmpty()) {
             if(needsToBeScheduled()){
                 scheduleJob(remoteMessage);
@@ -56,7 +63,9 @@ public class FirebaseMessingService extends FirebaseMessagingService {
     public void handleNow(){}
 
     private void scheduleJob(RemoteMessage remoteMessage) {
-        String callerName = remoteMessage.getData().getOrDefault("caller_name", "Unknown Name");
+        String callerName = remoteMessage.getData().get("caller_name");
+        if(callerName == null || callerName.isEmpty())
+            callerName = "Unknown Name";
 
         Data data = new Data.Builder()
                 .putString("type", remoteMessage.getData().get("type"))
@@ -81,9 +90,9 @@ public class FirebaseMessingService extends FirebaseMessagingService {
 
     private void sendRegistrationToServer(String token) {
         if (!AppPreferences.get().getClientId().isEmpty()){
-            new RemoteApi().sendFcmToken(AppPreferences.get().getClientId(), token)
-                    .thenAccept(result -> {
-                        Log.d(TAG, "Result: " + result);
+            new RemoteApi().sendFcmToken(AppPreferences.get().getClientId(), token, s -> {
+                        Log.d(TAG, "Result: " + s);
+                        return null;
                     });
         }
     }
@@ -140,7 +149,10 @@ public class FirebaseMessingService extends FirebaseMessagingService {
             if (type!=null && type.equals("9")){
                 String callerName = getInputData().getString("caller_name");
                 String alert = getInputData().getString("alert");
-                ALIOTT.getInstance().notifyOnReceiveIncomingCallFCM(callerName, alert);
+                Map metadata = new HashMap(){{
+                   put("check_sum", Constants.checksume);
+                }};
+                ALIOTT.getInstance().notifyOnReceiveIncomingCallFCM(callerName, alert,metadata);
             }
 
             return Result.success();

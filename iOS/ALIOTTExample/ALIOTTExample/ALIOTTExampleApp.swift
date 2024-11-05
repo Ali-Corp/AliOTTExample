@@ -24,12 +24,13 @@ struct ALIOTTExampleApp: App {
                         delegate.onRequestShowCall = { call in
                             self.call = call
                         }
+                        delegate.onRequestHideCall = { reason in
+                            self.call = nil
+                        }
                     }
                 if let call = call {
                     NavigationView {
-                        CallSwiftUIView(call: call) {
-                            self.call = nil
-                        }
+                        CallSwiftUIView(call: call)
                         .navigationBarHidden(true)
                     }
                 }
