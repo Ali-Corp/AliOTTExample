@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C01929F2C182B81002EC7BC /* ALIOTTExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C01929E2C182B81002EC7BC /* ALIOTTExampleApp.swift */; };
+		8C0192A12C182B81002EC7BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192A02C182B81002EC7BC /* ContentView.swift */; };
+		8C0192A32C182B84002EC7BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0192A22C182B84002EC7BC /* Assets.xcassets */; };
+		8C0192A72C182B84002EC7BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0192A62C182B84002EC7BC /* Preview Assets.xcassets */; };
+		8C0192B22C1838AE002EC7BC /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0192B12C1838AE002EC7BC /* CallKit.framework */; };
+		8C0192B42C1838B7002EC7BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0192B32C1838B7002EC7BC /* AVFoundation.framework */; };
+		8C0192B62C183B5E002EC7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192B52C183B5E002EC7BC /* AppDelegate.swift */; };
+		8C1082A12CD4B22600735407 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1082A02CD4B22000735407 /* Extension.swift */; };
+		8C3FCC9D2C184E6C002C4FD7 /* CallSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FCC9C2C184E6C002C4FD7 /* CallSwiftUIView.swift */; };
+		8CDECBB62CCF8A4A007BDE83 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDECBB52CCF8A42007BDE83 /* Env.swift */; };
+		8CE0E2282CD236FF001B52DE /* custom_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CE0E2272CD236FF001B52DE /* custom_sound.mp3 */; };
+		D74DC5672A4BE9FFE0364FB8 /* Pods_ALIOTTExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B643CD337B5ABBB37182C5 /* Pods_ALIOTTExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8CA7093A2C258595000ECC60 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		68B643CD337B5ABBB37182C5 /* Pods_ALIOTTExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ALIOTTExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1600DC18B644E1788DD8C5 /* Pods-ALIOTTExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALIOTTExample.release.xcconfig"; path = "Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample.release.xcconfig"; sourceTree = "<group>"; };
+		8C01929B2C182B81002EC7BC /* ALIOTTExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALIOTTExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C01929E2C182B81002EC7BC /* ALIOTTExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALIOTTExampleApp.swift; sourceTree = "<group>"; };
+		8C0192A02C182B81002EC7BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8C0192A22C182B84002EC7BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C0192A42C182B84002EC7BC /* ALIOTTExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ALIOTTExample.entitlements; sourceTree = "<group>"; };
+		8C0192A62C182B84002EC7BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8C0192B12C1838AE002EC7BC /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/CallKit.framework; sourceTree = DEVELOPER_DIR; };
+		8C0192B32C1838B7002EC7BC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		8C0192B52C183B5E002EC7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C0192C02C184BE2002EC7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8C1082A02CD4B22000735407 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		8C3FCC9C2C184E6C002C4FD7 /* CallSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallSwiftUIView.swift; sourceTree = "<group>"; };
+		8CA709302C258558000ECC60 /* Starscream.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Starscream.xcframework; path = Pods/ALIOTT/iOS/Starscream.xcframework; sourceTree = "<group>"; };
+		8CA709342C258583000ECC60 /* ALIOTTHotline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ALIOTTHotline.xcframework; path = Pods/ALIOTT/iOS/ALIOTTHotline.xcframework; sourceTree = "<group>"; };
+		8CB446CC2CD0E87800062186 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8CDECBB52CCF8A42007BDE83 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		8CE0E2272CD236FF001B52DE /* custom_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = custom_sound.mp3; sourceTree = "<group>"; };
+		AD2B1CE0BBC931869EBEE62C /* Pods-ALIOTTExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ALIOTTExample.debug.xcconfig"; path = "Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C0192982C182B81002EC7BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0192B42C1838B7002EC7BC /* AVFoundation.framework in Frameworks */,
+				8C0192B22C1838AE002EC7BC /* CallKit.framework in Frameworks */,
+				D74DC5672A4BE9FFE0364FB8 /* Pods_ALIOTTExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C0192922C182B81002EC7BC = {
+			isa = PBXGroup;
+			children = (
+				8C01929D2C182B81002EC7BC /* ALIOTTExample */,
+				8C01929C2C182B81002EC7BC /* Products */,
+				8C0192B02C1838AE002EC7BC /* Frameworks */,
+				A790C639533A3D89177BEE43 /* Pods */,
+				8CDECBB42CCF6DE3007BDE83 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		8C01929C2C182B81002EC7BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C01929B2C182B81002EC7BC /* ALIOTTExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C01929D2C182B81002EC7BC /* ALIOTTExample */ = {
+			isa = PBXGroup;
+			children = (
+				8CB446CC2CD0E87800062186 /* GoogleService-Info.plist */,
+				8CDECBB52CCF8A42007BDE83 /* Env.swift */,
+				8C0192C02C184BE2002EC7BC /* Info.plist */,
+				8C01929E2C182B81002EC7BC /* ALIOTTExampleApp.swift */,
+				8C0192A02C182B81002EC7BC /* ContentView.swift */,
+				8CE0E2272CD236FF001B52DE /* custom_sound.mp3 */,
+				8C0192A22C182B84002EC7BC /* Assets.xcassets */,
+				8C0192A42C182B84002EC7BC /* ALIOTTExample.entitlements */,
+				8C0192A52C182B84002EC7BC /* Preview Content */,
+				8C0192B52C183B5E002EC7BC /* AppDelegate.swift */,
+				8C1082A02CD4B22000735407 /* Extension.swift */,
+				8C3FCC9C2C184E6C002C4FD7 /* CallSwiftUIView.swift */,
+			);
+			path = ALIOTTExample;
+			sourceTree = "<group>";
+		};
+		8C0192A52C182B84002EC7BC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8C0192A62C182B84002EC7BC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8C0192B02C1838AE002EC7BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CA709342C258583000ECC60 /* ALIOTTHotline.xcframework */,
+				8CA709302C258558000ECC60 /* Starscream.xcframework */,
+				8C0192B32C1838B7002EC7BC /* AVFoundation.framework */,
+				8C0192B12C1838AE002EC7BC /* CallKit.framework */,
+				68B643CD337B5ABBB37182C5 /* Pods_ALIOTTExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CDECBB42CCF6DE3007BDE83 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		A790C639533A3D89177BEE43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B1CE0BBC931869EBEE62C /* Pods-ALIOTTExample.debug.xcconfig */,
+				7A1600DC18B644E1788DD8C5 /* Pods-ALIOTTExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C01929A2C182B81002EC7BC /* ALIOTTExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C0192AA2C182B84002EC7BC /* Build configuration list for PBXNativeTarget "ALIOTTExample" */;
+			buildPhases = (
+				BA0BCE6A25511DB53EAC9B5D /* [CP] Check Pods Manifest.lock */,
+				8C0192972C182B81002EC7BC /* Sources */,
+				8C0192982C182B81002EC7BC /* Frameworks */,
+				8C0192992C182B81002EC7BC /* Resources */,
+				8CA7093A2C258595000ECC60 /* Embed Frameworks */,
+				D280C3AE3FBD255E67898107 /* [CP] Embed Pods Frameworks */,
+				D1C774201C6E31348058C31E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALIOTTExample;
+			productName = HotlineCallExample;
+			productReference = 8C01929B2C182B81002EC7BC /* ALIOTTExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C0192932C182B81002EC7BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					8C01929A2C182B81002EC7BC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 8C0192962C182B81002EC7BC /* Build configuration list for PBXProject "ALIOTTExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C0192922C182B81002EC7BC;
+			productRefGroup = 8C01929C2C182B81002EC7BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C01929A2C182B81002EC7BC /* ALIOTTExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C0192992C182B81002EC7BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0192A72C182B84002EC7BC /* Preview Assets.xcassets in Resources */,
+				8C0192A32C182B84002EC7BC /* Assets.xcassets in Resources */,
+				8CE0E2282CD236FF001B52DE /* custom_sound.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BA0BCE6A25511DB53EAC9B5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ALIOTTExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C774201C6E31348058C31E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D280C3AE3FBD255E67898107 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ALIOTTExample/Pods-ALIOTTExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C0192972C182B81002EC7BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDECBB62CCF8A4A007BDE83 /* Env.swift in Sources */,
+				8C3FCC9D2C184E6C002C4FD7 /* CallSwiftUIView.swift in Sources */,
+				8C0192B62C183B5E002EC7BC /* AppDelegate.swift in Sources */,
+				8C0192A12C182B81002EC7BC /* ContentView.swift in Sources */,
+				8C01929F2C182B81002EC7BC /* ALIOTTExampleApp.swift in Sources */,
+				8C1082A12CD4B22600735407 /* Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8C0192A82C182B84002EC7BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8C0192A92C182B84002EC7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		8C0192AB2C182B84002EC7BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD2B1CE0BBC931869EBEE62C /* Pods-ALIOTTExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ALIOTTExample/ALIOTTExample.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ALIOTTExample/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 423A8TXZT7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_ROOT}/ALIOTT\"",
+					"\"${PODS_ROOT}/WebRTC-lib\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ALIOTT\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC-lib\"",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ALIOTTExample/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ali.ott.example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "ALIOTTExample Dev";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8C0192AC2C182B84002EC7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A1600DC18B644E1788DD8C5 /* Pods-ALIOTTExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ALIOTTExample/ALIOTTExample.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ALIOTTExample/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 423A8TXZT7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_ROOT}/ALIOTT\"",
+					"\"${PODS_ROOT}/WebRTC-lib\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ALIOTT\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC-lib\"",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ALIOTTExample/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ali.ott.example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "ALIOTTExample Dev";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C0192962C182B81002EC7BC /* Build configuration list for PBXProject "ALIOTTExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0192A82C182B84002EC7BC /* Debug */,
+				8C0192A92C182B84002EC7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C0192AA2C182B84002EC7BC /* Build configuration list for PBXNativeTarget "ALIOTTExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0192AB2C182B84002EC7BC /* Debug */,
+				8C0192AC2C182B84002EC7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C0192932C182B81002EC7BC /* Project object */;
+}
