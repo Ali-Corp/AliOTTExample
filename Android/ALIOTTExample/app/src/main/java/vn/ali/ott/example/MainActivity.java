@@ -1,6 +1,8 @@
 package vn.ali.ott.example;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -9,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -30,6 +34,7 @@ import vn.ali.ott.object.ALIOTTCall;
 
 public class MainActivity extends AppCompatActivity  {
     private ActivityMainBinding binding;
+    private static final int REQUEST_POST_NOTIFICATIONS = 1;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -52,6 +57,27 @@ public class MainActivity extends AppCompatActivity  {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    private void askNotificationPermission(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, REQUEST_POST_NOTIFICATIONS);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_POST_NOTIFICATIONS) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, you can show notifications
+            } else {
+                Toast.makeText(this, "Permission denied, handle accordingly", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 
     private void saveConfig() {
         String fcmToken = AppPreferences.get().getCachedFcmToken();
@@ -92,6 +118,7 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //LocaleHelper.updateLocale(this, new Locale("vi", "VN"));
+        askNotificationPermission();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
