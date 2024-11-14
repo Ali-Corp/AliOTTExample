@@ -1,5 +1,5 @@
 PODS:
-  - ALIOTT (1.1.1):
+  - ALIOTT (1.1.3):
     - SwiftyJSON (~> 5.0)
     - WebRTC-lib (= 113.0.0)
   - Starscream (3.1.1)
@@ -7,23 +7,25 @@ PODS:
   - WebRTC-lib (113.0.0)
 
 DEPENDENCIES:
-  - ALIOTT (~> 1.1.1)
+  - ALIOTT (from `../../../../public/AliOTT/`)
   - Starscream (~> 3.1)
 
 SPEC REPOS:
-  https://github.com/Ali-Corp/PodSpecs.git:
-    - ALIOTT
   https://github.com/CocoaPods/Specs.git:
     - Starscream
     - SwiftyJSON
     - WebRTC-lib
 
+EXTERNAL SOURCES:
+  ALIOTT:
+    :path: "../../../../public/AliOTT/"
+
 SPEC CHECKSUMS:
-  ALIOTT: 69ff933dcb3d9f65031b0d1586f12e27a456cdb6
+  ALIOTT: 4e5fe45becb135251f86e3cc2c3e6c8b728d17a7
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   WebRTC-lib: d9c91d380e62fa0ea3d3144ccd50deb7a70fb6a8
 
-PODFILE CHECKSUM: b9d2adcc8a5e695aa11c7de37879394e2b66e674
+PODFILE CHECKSUM: 67c296d066a24e536eae396ce075ae0212cea5a0
 
 COCOAPODS: 1.15.2

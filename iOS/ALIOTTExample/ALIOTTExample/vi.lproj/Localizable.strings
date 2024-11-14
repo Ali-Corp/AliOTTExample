@@ -1,0 +1,13 @@
+//
+//  Localizable.strings
+//  ALIOTTExample
+//
+//  Created by Vu Ho on 14/11/24.
+//
+
+"btn_login" = "Đăng nhập";
+"btn_logout" = "Đăng xuất";
+"btn_call_hotline" = "Gọi Hotline";
+"btn_call" = "Gọi";
+"lb_caller" = "Người gọi";
+"lb_callee" = "Người nhận";

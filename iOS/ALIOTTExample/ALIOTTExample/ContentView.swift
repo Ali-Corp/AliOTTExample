@@ -19,13 +19,14 @@ struct ContentView: View {
         ScrollView {
             VStack(spacing: 20) {
                 HStack(spacing: 13) {
-                    TextField("Người gọi", text: $callerId)
+                    TextField(NSLocalizedString("lb_caller", comment: "Caller"), text: $callerId)
                         .keyboardType(.phonePad)
                         .disabled(loggedIn)
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.blue, lineWidth: 1))
-                    Button(loggedIn ? "Logout" : "Login") {
+                    Button(loggedIn ? NSLocalizedString("btn_logout", comment: "Logout") :
+                            NSLocalizedString("btn_login", comment: "Login")) {
                         if !loggedIn {
                             if !callerId.isEmpty {
                                 loggedIn = true
@@ -46,7 +47,7 @@ struct ContentView: View {
 
                 if loggedIn {
                     HStack(spacing: 13) {
-                        TextField("Người nghe", text: $calleeId)
+                        TextField(NSLocalizedString("lb_callee", comment: "Callee"), text: $calleeId)
                             .keyboardType(.phonePad)
                             .padding()
                             .overlay(RoundedRectangle(cornerRadius: 8)
@@ -67,9 +68,9 @@ struct ContentView: View {
                                         type: 1,
                                         metadata: [
                                             "check_sum": "5270369466588474968f1730711963000"
-//                                            "check_sum": "5270369466588474968f17307119"
+                                            //                                            "check_sum": "5270369466588474968f17307119"
                                         ]
-                                ))
+                                    ))
                             }
                         }
                     }
@@ -88,7 +89,7 @@ struct ContentView: View {
                             VStack(spacing: 12) {
                                 Image(systemName: "phone.fill")
                                     .imageScale(.large)
-                                Text("Call hotline")
+                                Text(NSLocalizedString("btn_call_hotline", comment: "Call hotline"))
                                 Text(hotline.name)
                             }
                         }

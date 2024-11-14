@@ -15,6 +15,7 @@
 		8C0192B42C1838B7002EC7BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0192B32C1838B7002EC7BC /* AVFoundation.framework */; };
 		8C0192B62C183B5E002EC7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0192B52C183B5E002EC7BC /* AppDelegate.swift */; };
 		8C1082A12CD4B22600735407 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1082A02CD4B22000735407 /* Extension.swift */; };
+		8C31C45F2CE6015500C6E812 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C31C45D2CE6015500C6E812 /* Localizable.strings */; };
 		8C3FCC9D2C184E6C002C4FD7 /* CallSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3FCC9C2C184E6C002C4FD7 /* CallSwiftUIView.swift */; };
 		8CDECBB62CCF8A4A007BDE83 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDECBB52CCF8A42007BDE83 /* Env.swift */; };
 		8CE0E2282CD236FF001B52DE /* custom_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CE0E2272CD236FF001B52DE /* custom_sound.mp3 */; };
@@ -48,6 +49,8 @@
 		8C0192B52C183B5E002EC7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C0192C02C184BE2002EC7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8C1082A02CD4B22000735407 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		8C31C45E2CE6015500C6E812 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C31C4602CE6015D00C6E812 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C3FCC9C2C184E6C002C4FD7 /* CallSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallSwiftUIView.swift; sourceTree = "<group>"; };
 		8CA709302C258558000ECC60 /* Starscream.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Starscream.xcframework; path = Pods/ALIOTT/iOS/Starscream.xcframework; sourceTree = "<group>"; };
 		8CA709342C258583000ECC60 /* ALIOTTHotline.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ALIOTTHotline.xcframework; path = Pods/ALIOTT/iOS/ALIOTTHotline.xcframework; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		8C01929D2C182B81002EC7BC /* ALIOTTExample */ = {
 			isa = PBXGroup;
 			children = (
+				8C31C45D2CE6015500C6E812 /* Localizable.strings */,
 				8CB446CC2CD0E87800062186 /* GoogleService-Info.plist */,
 				8CDECBB52CCF8A42007BDE83 /* Env.swift */,
 				8C0192C02C184BE2002EC7BC /* Info.plist */,
@@ -191,6 +195,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 8C0192922C182B81002EC7BC;
 			productRefGroup = 8C01929C2C182B81002EC7BC /* Products */;
@@ -208,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0192A72C182B84002EC7BC /* Preview Assets.xcassets in Resources */,
+				8C31C45F2CE6015500C6E812 /* Localizable.strings in Resources */,
 				8C0192A32C182B84002EC7BC /* Assets.xcassets in Resources */,
 				8CE0E2282CD236FF001B52DE /* custom_sound.mp3 in Resources */,
 			);
@@ -289,6 +295,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C31C45D2CE6015500C6E812 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C31C45E2CE6015500C6E812 /* en */,
+				8C31C4602CE6015D00C6E812 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8C0192A82C182B84002EC7BC /* Debug */ = {
