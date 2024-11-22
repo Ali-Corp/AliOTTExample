@@ -1,5 +1,6 @@
 package vn.ali.ott.example;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -34,7 +35,6 @@ import vn.ali.ott.object.ALIOTTCall;
 
 public class MainActivity extends AppCompatActivity  {
     private ActivityMainBinding binding;
-    private static final int REQUEST_POST_NOTIFICATIONS = 1;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -58,10 +58,12 @@ public class MainActivity extends AppCompatActivity  {
         return true;
     }
 
+    private static final int REQUEST_POST_NOTIFICATIONS = 1;
+
     private void askNotificationPermission(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, REQUEST_POST_NOTIFICATIONS);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, REQUEST_POST_NOTIFICATIONS);
             }
         }
     }
@@ -77,7 +79,6 @@ public class MainActivity extends AppCompatActivity  {
             }
         }
     }
-
 
     private void saveConfig() {
         String fcmToken = AppPreferences.get().getCachedFcmToken();
@@ -171,7 +172,7 @@ public class MainActivity extends AppCompatActivity  {
         String displayName = calleeName; // Tên thể hiện on UI của cuộc gọi
 
         HashMap<String, String> metadata = new HashMap(){{
-            put("check_sum", "5270369466588474968f1730711963000");
+            put("check_sum", Constants.checksume);
         }}; // Metadata của cuộc gọi
 
 

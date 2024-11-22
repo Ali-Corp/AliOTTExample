@@ -71,8 +71,8 @@ extension AppDelegate: PKPushRegistryDelegate {
     }
 
     func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType) {
+        debugPrint("didReceiveIncomingPushWith", payload)
         ALIOTT.shared().pushRegistry(registry, didReceiveIncomingPushWith: payload, for: type, metadata: [
-//                                                        "check_sum": "5270369466588474968f17307119"
             "check_sum": "5270369466588474968f1730711963000"
         ])
     }
@@ -84,19 +84,30 @@ extension AppDelegate: PKPushRegistryDelegate {
 
 extension AppDelegate: ALIOTTDelegate {
     func aliottOnRequestHideCall(call: ALIOTTCall?, reason: ALIOTTEndCallReason) {
-        onRequestHideCall?(reason)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.onRequestHideCall?(reason)
+        }
 
         debugPrint("aliottOnRequestHideCall", reason)
     }
     
     func aliottOnRequestCustomMetadataForCall(call: ALIOTTCall) -> [String : Any] {
         return [
-            "message_deeplink": "app-settings:root=General&path=ACCESSIBILITY"
+            "message_deeplink": "app-settings:root=General&path=ACCESSIBILITY",
+            "free_call_title": "Free call",
+            "call_connecting": "Connecting",
+            "call_ringing": "Ringing",
+            "call_end": "Call end",
+            "call_btn_speaker": "Speaker",
+            "call_btn_mute": "Mute",
+            "call_btn_message": "Message",
+            "call_refused": "The driver refused call",
+            "call_lose_connection": "Lost connection",
         ]
     }
     
     func aliottOnUpdatePushKitToken(_ pushToken: String) {
-        self.pushKitToken = pushToken
+        pushKitToken = pushToken
     }
 
     func aliottOnNotifyOutgoingCall(type: Int, alert: String, metadata: [String: Any]) {

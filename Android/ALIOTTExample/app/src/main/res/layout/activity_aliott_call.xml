@@ -28,40 +28,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clipChildren="false"
-        app:pulse_count="4"
-        app:pulse_duration="2000"
-        app:pulse_repeat="0"
-        app:pulse_color="#2196F3"
-        app:pulse_startFromScratch="true"
-        app:pulse_interpolator="Linear"
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:layout_centerHorizontal="true">
 
-        <TextView
-            android:id="@+id/tvLoading"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvFreeCall"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/ott_call_text_description_color"
-            android:text="@string/ott_lib_ringing_status"/>
+
 
         <LinearLayout
+            android:id="@+id/llAvatar"
             android:orientation="vertical"
-            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <vn.ali.ott.widget.CircleImageView
-                android:id="@+id/ivAvatar"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/avatar"
-                android:layout_centerInParent="true"/>
+            <TextView
+                android:id="@+id/tvLoading"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ott_call_text_label_color" />
+
+            <FrameLayout
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_centerInParent="true">
+
+                <!-- Background View -->
+                <View
+                    android:id="@+id/avatarBgView"
+                    android:layout_gravity="center"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/bg_avatar_bacground" />
+
+                <!-- CircleImageView -->
+                <vn.ali.ott.widget.CircleImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_gravity="center"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/avatar" />
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/tvName"
@@ -110,6 +118,7 @@
                 android:background="?selectableItemBackgroundBorderless" />
 
             <TextView
+                android:id="@+id/tvSpeaker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ott_lib_speaker"
@@ -136,6 +145,7 @@
                 android:background="?selectableItemBackgroundBorderless" />
 
             <TextView
+                android:id="@+id/tvMic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ott_lib_mic"
@@ -163,6 +173,7 @@
                 android:background="?selectableItemBackgroundBorderless" />
 
             <TextView
+                android:id="@+id/tvDeeplinkMsg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ott_lib_message"
@@ -174,6 +185,7 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/groupActionCall"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -193,7 +205,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:contentDescription="@string/ott_lib_end_call"
-                android:src="@drawable/bg_end_call"
+                android:src="@drawable/bg_deny_call"
                 android:clickable="true"
                 android:focusable="true"
                 android:background="?selectableItemBackgroundBorderless"/>
@@ -208,14 +220,34 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <ImageView
-                android:id="@+id/btAccept"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/bg_answer_call"
-                android:background="?selectableItemBackgroundBorderless" />
+            <FrameLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp">
+
+                <View
+                    android:id="@+id/acceptBtnBg"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_answer_call_bg"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                <View
+                    android:id="@+id/acceptBtnOverlay"
+                    android:layout_gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/inner_overlay_answer_call"/>
+
+                <ImageView
+                    android:id="@+id/btAccept"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/bg_answer_call"
+                    android:background="?selectableItemBackgroundBorderless" />
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

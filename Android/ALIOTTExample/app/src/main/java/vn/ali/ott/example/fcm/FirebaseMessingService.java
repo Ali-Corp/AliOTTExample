@@ -44,8 +44,6 @@ public class FirebaseMessingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-//        Toast.makeText(getApplicationContext(), "Message received", Toast.LENGTH_LONG).show();
-//        Log.d(TAG, "Message Notification Body: ${it.body}");
         if (!remoteMessage.getData().isEmpty()) {
             if(needsToBeScheduled()){
                 scheduleJob(remoteMessage);

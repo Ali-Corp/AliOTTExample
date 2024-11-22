@@ -138,6 +138,17 @@ public class MainApplication extends Application implements DefaultLifecycleObse
                 return new HashMap<String, String>() {
                     {
                         put("message_deeplink", "https://deeplink.com"); // Deeplink của cuộc gọi
+                        put("call_connecting" , "Connecting"); // Deeplink của cuộc gọi
+                        put("call_ringing" , call.isOutgoing() ? "Ringing" : "Calling you"); // Deeplink của cuộc gọi
+                        put("call_end","Call end"); // Deeplink của cuộc gọi
+                        put("call_btn_speaker" , "Speaker"); // Deeplink của cuộc gọi
+                        put("call_btn_mute" , "Mute");
+                        put("call_refused", "The driver refused call");
+                        put("call_lose_connection", "Lost connection");
+                        put("free_call_title", "Free call123");
+                        put("call_btn_message", "Message111");
+                        put("end_call_delay", "2000");
+                        put("title_head_notification", "Xanh SM");
                     }
                 };
             }

@@ -55,10 +55,10 @@ struct CallSwiftUIView_Previews: PreviewProvider {
                                 "message_deeplink": "app-settings:root=General&path=ACCESSIBILITY"
                              ],
                              type: 1,
-                             outgoing: false,
+                             outgoing: true,
                              hotline: false,
-                             state: .pending,
-                             connectedState: .complete,
-                             connectedTime: Date()))
+                             state: .ended(.calleeEnd),
+                             connectedState: .connected,
+                             connectedTime: nil))
     }
 }

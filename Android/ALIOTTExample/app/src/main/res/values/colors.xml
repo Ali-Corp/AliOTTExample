@@ -10,7 +10,9 @@
     <!--OTT UIConfig-->
     <color name="ott_icon_background_color">#D4F2F2</color>
     <color name="ott_icon_foreground_color">#187173</color>
+    <color name="ott_call_text_label_color">#333333</color>
     <color name="ott_call_text_description_color">#7F7F7F</color>
+    <color name="ott_call_text_call_refused_color">#E60A32</color>
     <color name="ott_call_label_color">#1c1c1c</color>
 
 </resources>
